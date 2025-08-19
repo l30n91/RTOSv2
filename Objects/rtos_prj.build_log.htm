@@ -1,0 +1,1034 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: leonardo buonaiuto, leo, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.56.1.0
+ 
+<h2>Project:</h2>
+C:\Users\bl91\Desktop\RTOS\rtos_prj.uvprojx
+Project File Date:  08/19/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main.c(6): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+1 warning generated.
+compiling main.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32NUCLEO_BSP/1.8.1/Boards/ST/NUCLEO-F401RE/Common/Buttons_NUCLEO_F401RE.c(34): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx.h"                  // Device header
+                                        ^
+1 warning generated.
+compiling Buttons_NUCLEO_F401RE.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32NUCLEO_BSP/1.8.1/Boards/ST/NUCLEO-F401RE/Common/LED_NUCLEO_F401RE.c(34): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx.h"                  // Device header
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32NUCLEO_BSP/1.8.1/Boards/ST/NUCLEO-F401RE/Common/LED_NUCLEO_F401RE.c(39): warning: no previous extern declaration for non-static variable 'led_mask' [-Wmissing-variable-declarations]
+const unsigned long led_mask[] = {1ul << 5};
+                    ^
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32NUCLEO_BSP/1.8.1/Boards/ST/NUCLEO-F401RE/Common/LED_NUCLEO_F401RE.c(39): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const unsigned long led_mask[] = {1ul << 5};
+      ^
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32NUCLEO_BSP/1.8.1/Boards/ST/NUCLEO-F401RE/Common/LED_NUCLEO_F401RE.c(127): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+      LED_On (i);
+      ~~~~~~  ^
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32NUCLEO_BSP/1.8.1/Boards/ST/NUCLEO-F401RE/Common/LED_NUCLEO_F401RE.c(129): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+      LED_Off(i);
+      ~~~~~~~ ^
+4 warnings generated.
+compiling LED_NUCLEO_F401RE.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(32): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(32): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(41): warning: // comments are not allowed in this language [-Wcomment]
+// System Configuration
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(734): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+extern void $Super$$_fp_init (void);
+            ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(734): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+extern void $Super$$_fp_init (void);
+                  ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(734): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+extern void $Super$$_fp_init (void);
+                   ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(736): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+void $Sub$$_fp_init (void);
+     ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(736): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+void $Sub$$_fp_init (void);
+         ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(736): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+void $Sub$$_fp_init (void);
+          ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(737): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+void $Sub$$_fp_init (void) {
+     ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(737): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+void $Sub$$_fp_init (void) {
+         ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(737): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+void $Sub$$_fp_init (void) {
+          ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(738): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+  $Super$$_fp_init();
+  ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(738): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+  $Super$$_fp_init();
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c(738): warning: '$' in identifier [-Wdollar-in-identifier-extension]
+  $Super$$_fp_init();
+         ^
+18 warnings generated.
+compiling rtx_lib.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(36): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(37): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c(29): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Service Calls ====
+^
+11 warnings generated.
+compiling rtx_delay.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(36): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(37): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(29): warning: // comments are not allowed in this language [-Wcomment]
+//  OS Runtime Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c(32): warning: designated initializers are a C99 feature [-Wc99-designator]
+{ .os_id = osRtxKernelId, .version = osRtxVersionKernel, .kernel.state = osRtxKernelInactive };
+  ^
+12 warnings generated.
+compiling rtx_kernel.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evr.c(28): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_evr.h"                    // RTX Event Recorder definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evr.c(28): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evr.c(28): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_os.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evr.c(28): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_os.h(32): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evr.c(28): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_os.h(32): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evr.c(28): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+6 warnings generated.
+compiling rtx_evr.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(36): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(37): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c(29): warning: // comments are not allowed in this language [-Wcomment]
+//  OS Runtime Object Memory Usage
+^
+11 warnings generated.
+compiling rtx_evflags.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(36): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(37): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c(29): warning: // comments are not allowed in this language [-Wcomment]
+//  Memory Pool Header structure
+^
+11 warnings generated.
+compiling rtx_memory.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(36): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(37): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c(29): warning: // comments are not allowed in this language [-Wcomment]
+//  OS Runtime Object Memory Usage
+^
+11 warnings generated.
+compiling rtx_mempool.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(36): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(37): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c(29): warning: // comments are not allowed in this language [-Wcomment]
+//  OS Runtime Object Memory Usage
+^
+11 warnings generated.
+compiling rtx_msgqueue.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(36): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(37): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c(29): warning: // comments are not allowed in this language [-Wcomment]
+//  OS Runtime Object Memory Usage
+^
+11 warnings generated.
+compiling rtx_mutex.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(36): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(37): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c(29): warning: // comments are not allowed in this language [-Wcomment]
+//  OS Runtime Object Memory Usage
+^
+11 warnings generated.
+compiling rtx_semaphore.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(36): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(37): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c(29): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Helper functions ====
+^
+11 warnings generated.
+compiling rtx_system.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(36): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(37): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c(29): warning: // comments are not allowed in this language [-Wcomment]
+//  OS Runtime Object Memory Usage
+^
+11 warnings generated.
+compiling rtx_thread.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(30): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(36): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(37): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c(26): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c(29): warning: // comments are not allowed in this language [-Wcomment]
+//  OS Runtime Object Memory Usage
+^
+11 warnings generated.
+compiling rtx_timer.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Source/os_systick.c(25): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Source/os_systick.c(27): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB,SysTick) "cast from unsigned long to pointer"
+^
+2 warnings generated.
+compiling os_systick.c...
+RTE/CMSIS/RTX_Config.c(29): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+RTE/CMSIS/RTX_Config.c(29): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(32): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+RTE/CMSIS/RTX_Config.c(29): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(32): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+RTE/CMSIS/RTX_Config.c(29): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+RTE/CMSIS/RTX_Config.c(31): warning: // comments are not allowed in this language [-Wcomment]
+// OS Idle Thread
+^
+5 warnings generated.
+compiling RTX_Config.c...
+compiling system_stm32f4xx.c...
+compiling stm32f4xx_hal_gpio.c...
+compiling stm32f4xx_hal.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c(379): warning: unused parameter 'Regulator' [-Wunused-parameter]
+void HAL_PWR_EnterSLEEPMode(uint32_t Regulator, uint8_t SLEEPEntry)
+                                     ^
+1 warning generated.
+compiling stm32f4xx_hal_pwr.c...
+compiling stm32f4xx_hal_pwr_ex.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c(215): warning: function 'HAL_NVIC_SystemReset' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c(81): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F401RETx\stm32f4xx_hal_conf.h(401): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_cortex.h(52): warning: padding struct 'MPU_Region_InitTypeDef' with 2 bytes to align 'BaseAddress' [-Wpadded]
+  uint32_t               BaseAddress;           /*!< Specifies the base address of the region to protect.                           */
+                         ^
+2 warnings generated.
+compiling stm32f4xx_hal_cortex.c...
+compiling stm32f4xx_hal_rcc.c...
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c(23): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F401RETx\stm32f4xx_hal_conf.h(385): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_rcc.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h(403): warning: padding size of 'RCC_PeriphCLKInitTypeDef' with 3 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling stm32f4xx_hal_rcc_ex.c...
+linking...
+Program Size: Code=12668 RO-data=716 RW-data=164 ZI-data=35792  
+".\Objects\rtos_prj.axf" - 0 Error(s), 163 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM.CMSIS.6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: OS Tick Version: 1.0.1
+   * Component: RTOS2 Version: 2.3.0
+   * Component: CORE Version: 6.0.0
+   * Component: SysTick Version: 1.0.5
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS-RTX.5.9.0.pack
+                ARM.CMSIS-RTX.5.9.0
+                RTX RTOS implementation of CMSIS-RTOS2 API
+   * Component: Keil RTX5 Variant: Source Version: 5.9.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.MDK-Middleware.7.15.0.pack
+                Keil.MDK-Middleware.7.15.0
+                Middleware for Keil MDK-Professional and MDK-Plus
+   * Component: Buttons Version: 1.0.0
+   * Component: LED Version: 1.0.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
+                Keil.STM32F4xx_DFP.2.17.1
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: STM32Cube Framework Version: 1.0.0
+   * Component: Classic Version: 1.8.1
+   * Component: Common Version: 1.8.1
+   * Component: Cortex Version: 1.8.1
+   * Component: GPIO Version: 1.8.1
+   * Component: PWR Version: 1.8.1
+   * Component: RCC Version: 1.8.1
+   * Component: Startup Version: 2.6.3
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32NUCLEO_BSP.1.8.1.pack
+                Keil.STM32NUCLEO_BSP.1.8.1
+                STMicroelectronics Nucleo Boards Support and Examples
+   * Component: Buttons Version: 1.1.0
+   * Component: LED Version: 1.1.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/CMSIS
+  ./RTE/Device/STM32F401RETx
+  ./RTE/_Target_1
+  C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include
+  C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
+  C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include
+  C:/Users/bl91/AppData/Local/Arm/Packs/Keil/MDK-Middleware/7.15.0/Board
+  C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+  C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/STM32F4xx_HAL_Driver/Inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::Board Support:Buttons:1.0.0 (API)
+      Include file:  Board/Board_Buttons.h
+
+   * Component: ::Board Support:LED:1.0.0 (API)
+      Include file:  Board/Board_LED.h
+
+   * Component: ::CMSIS:OS Tick:1.0.1 (API)
+      Include file:  CMSIS/RTOS2/Include/os_tick.h
+
+   * Component: ::CMSIS:RTOS2:2.3.0 (API)
+      Include file:  CMSIS/RTOS2/Include/cmsis_os2.h
+
+   * Component: ::Device:STM32Cube Framework:1.0.0 (API)
+
+   * Component: ARM::CMSIS:CORE:6.0.0
+
+   * Component: ARM::CMSIS:OS Tick:SysTick:1.0.5
+      Source file:   CMSIS/RTOS2/Source/os_systick.c
+
+   * Component: ARM::CMSIS:RTOS2:Keil RTX5:Source:5.9.0
+      Source file:   Template/main.c
+      Source file:   Template/Events.c
+      Source file:   Config/RTX_Config.c
+      Source file:   Template/Mutex.c
+      Source file:   Source/rtx_thread.c
+      Source file:   Template/MsgQueue.c
+      Source file:   Source/rtx_delay.c
+      Source file:   Source/rtx_semaphore.c
+      Source file:   Template/svc_user.c
+      Source file:   Source/rtx_mutex.c
+      Source file:   Template/Semaphore.c
+      Source file:   Source/rtx_memory.c
+      Source file:   Template/MemPool.c
+      Source file:   Template/Timer.c
+      Source file:   Source/rtx_timer.c
+      Source file:   Source/rtx_kernel.c
+      Source file:   Source/rtx_msgqueue.c
+      Source file:   Source/rtx_system.c
+      Source file:   Template/Thread.c
+      Include file:  Config/RTX_Config.h
+      Source file:   Source/rtx_mempool.c
+      Include file:  Include/rtx_os.h
+      Source file:   Source/rtx_evflags.c
+      Source file:   Source/rtx_evr.c
+      Source file:   Source/rtx_lib.c
+      Source file:   Source/GCC/irq_armv7m.S
+
+   * Component: Keil.NUCLEO-F401RE::Board Support:Buttons:1.1.0
+      Source file:   Boards/ST/NUCLEO-F401RE/Common/Buttons_NUCLEO_F401RE.c
+
+   * Component: Keil.NUCLEO-F401RE::Board Support:LED:1.1.0
+      Source file:   Boards/ST/NUCLEO-F401RE/Common/LED_NUCLEO_F401RE.c
+
+   * Component: Keil::Device:STM32Cube Framework:Classic:1.8.1
+      Source file:   MDK/Templates_LL/Src/main.c
+      Include file:  MDK/Templates_LL/Inc/main.h
+      Include file:  MDK/Templates/Inc/main.h
+      Include file:  CMSIS/Driver/Config/RTE_Device.h
+      Include file:  MDK/Templates/Inc/stm32f4xx_hal_conf.h
+      Source file:   MDK/Templates/Src/stm32f4xx_hal_msp.c
+      Include file:  MDK/Templates/Inc/stm32f4xx_it.h
+      Source file:   MDK/Templates/Src/stm32f4xx_it.c
+      Source file:   MDK/Templates/Src/main.c
+
+   * Component: Keil::Device:STM32Cube HAL:Common:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+      Include file:  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+
+   * Component: Keil::Device:STM32Cube HAL:Cortex:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+
+   * Component: Keil::Device:STM32Cube HAL:GPIO:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+
+   * Component: Keil::Device:STM32Cube HAL:PWR:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:RCC:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK/Device/Source/ARM/STM32F401xx_OPT.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Build Time Elapsed:  00:00:08
+</pre>
+</body>
+</html>
