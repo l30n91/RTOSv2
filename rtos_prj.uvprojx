@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>..\..\AppData\Local\Arm\Packs\ARM\CMSIS-RTX\5.9.0\Source</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
