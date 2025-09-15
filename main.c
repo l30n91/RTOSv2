@@ -24,33 +24,21 @@ static const osThreadAttr_t uartAttr = {
   .priority = osPriorityBelowNormal
 };
 
-
+void LED_blink(void) {
+   GPIOA->ODR ^= (1U << 5);   // PA5
+}
 static void TaskBlink(void *arg)
 {
   (void)arg;
   for (;;)
   {
-    //HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-    osDelay(500);             // 500 ms (usa il tick di RTOS)
+    LED_blink();
+    osDelay(1100);             // 500 ms (usa il tick di RTOS)
   }
 }
 
-void delayMs(int n){
-    int i;
-    for (; n > 0; n--)
-        for (i = 0; i < 2000; i++) ;
-}
-void LED_blink(int value) {
-    value %= 16;                    /* cap the max count at 15 */
 
-    for (; value > 0; value--) {
-        GPIOA->BSRR = 0x00000020;   /* turn on LED */
-        delayMs(200);
-        GPIOA->BSRR  = 0x00200000;   /* turn off LED */
-        delayMs(200);
-    }
-    delayMs(800);
-}
+
 
 
 
@@ -59,7 +47,7 @@ int osKernelConfigStatus;
 int main (void)
 {
   
-  RCC->AHB1ENR |=  1;             /* enable GPIOA clock */
+    RCC->AHB1ENR |=  1;             /* enable GPIOA clock */
     GPIOA->MODER &= ~0x00000C00;    /* clear pin mode */
     GPIOA->MODER |=  0x00000400;    /* set pin to output mode */
 
@@ -84,6 +72,7 @@ int main (void)
   uint32_t button_msk = (1U << Buttons_GetCount()) - 1;
   //kernel init
   osKernelInitialize();
-  //SystemCoreClockConfigure();                              /* configure System Clock */
-  
+  osThreadNew(TaskBlink, NULL, &blinkAttr);  // 2) crea i threa
+   osKernelStart(); 
+  for(;;) {}
 }
