@@ -389,6 +389,16 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
+            <File>
+              <FileName>SystemClockConf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SystemClockConf.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usart2.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

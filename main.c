@@ -6,47 +6,84 @@
 #include "stm32f4xx.h"                  // Device header
 #include "cmsis_os2.h"
 
-void SystemCoreClockConfigure(void) {
+extern void SystemCoreClockConfigure(void);
+extern void  USART2_init(void);
 
-  RCC->CR |= ((uint32_t)RCC_CR_HSION);                     /* Enable HSI */
-  while ((RCC->CR & RCC_CR_HSIRDY) == 0);                  /* Wait for HSI Ready */
+static void TaskBlink(void *arg);
+static void TaskUART(void *arg);
 
-  RCC->CFGR = RCC_CFGR_SW_HSI;                             /* HSI is system clock */
-  while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_HSI);  /* Wait for HSI used as system clock */
+static const osThreadAttr_t blinkAttr = {
+  .name = "Blink",
+  .stack_size = 512,         // bytes (aumenta se usi printf ecc.)
+  .priority = osPriorityNormal
+};
 
-  FLASH->ACR  = FLASH_ACR_PRFTEN;                          /* Enable Prefetch Buffer */
-  FLASH->ACR |= FLASH_ACR_ICEN;                            /* Instruction cache enable */
-  FLASH->ACR |= FLASH_ACR_DCEN;                            /* Data cache enable */
-  FLASH->ACR |= FLASH_ACR_LATENCY_5WS;                     /* Flash 5 wait state */
+static const osThreadAttr_t uartAttr = {
+  .name = "UART",
+  .stack_size = 768,
+  .priority = osPriorityBelowNormal
+};
 
-  RCC->CFGR |= RCC_CFGR_HPRE_DIV1;                         /* HCLK = SYSCLK */
-  RCC->CFGR |= RCC_CFGR_PPRE1_DIV4;                        /* APB1 = HCLK/4 */
-  RCC->CFGR |= RCC_CFGR_PPRE2_DIV2;                        /* APB2 = HCLK/2 */
 
-  RCC->CR &= ~RCC_CR_PLLON;                                /* Disable PLL */
-
-  /* PLL configuration:  VCO = HSI/M * N,  Sysclk = VCO/P */
-  RCC->PLLCFGR = ( 16ul                   |                /* PLL_M =  16 */
-                 (384ul <<  6)            |                /* PLL_N = 384 */
-                 (  3ul << 16)            |                /* PLL_P =   8 */
-                 (RCC_PLLCFGR_PLLSRC_HSI) |                /* PLL_SRC = HSI */
-                 (  8ul << 24)             );              /* PLL_Q =   8 */
-
-  RCC->CR |= RCC_CR_PLLON;                                 /* Enable PLL */
-  while((RCC->CR & RCC_CR_PLLRDY) == 0) __NOP();           /* Wait till PLL is ready */
-
-  RCC->CFGR &= ~RCC_CFGR_SW;                               /* Select PLL as system clock source */
-  RCC->CFGR |=  RCC_CFGR_SW_PLL;
-  while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL);  /* Wait till PLL is system clock src */
+static void TaskBlink(void *arg)
+{
+  (void)arg;
+  for (;;)
+  {
+    //HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+    osDelay(500);             // 500 ms (usa il tick di RTOS)
+  }
 }
+
+void delayMs(int n){
+    int i;
+    for (; n > 0; n--)
+        for (i = 0; i < 2000; i++) ;
+}
+void LED_blink(int value) {
+    value %= 16;                    /* cap the max count at 15 */
+
+    for (; value > 0; value--) {
+        GPIOA->BSRR = 0x00000020;   /* turn on LED */
+        delayMs(200);
+        GPIOA->BSRR  = 0x00200000;   /* turn off LED */
+        delayMs(200);
+    }
+    delayMs(800);
+}
+
 
 
 
 int osKernelConfigStatus;
 int main (void)
 {
+  
+  RCC->AHB1ENR |=  1;             /* enable GPIOA clock */
+    GPIOA->MODER &= ~0x00000C00;    /* clear pin mode */
+    GPIOA->MODER |=  0x00000400;    /* set pin to output mode */
+
+    USART2_init();                  /* initialize USART2 */
+    
+    
+     uint8_t c='c';
+     char string_[]= "anna ";
+     uint8_t* p_string=(uint8_t*)string_;
+     
+     while(*p_string !=' ')
+     {
+       while(!(USART2->SR & USART_SR_TXE)); /* wait until TX is enabled*/
+       
+       USART2->DR= *p_string;
+       
+       p_string ++;       
+     }
+  
+  
+  
   uint32_t button_msk = (1U << Buttons_GetCount()) - 1;
+  //kernel init
   osKernelInitialize();
-  SystemCoreClockConfigure();                              /* configure System Clock */
+  //SystemCoreClockConfigure();                              /* configure System Clock */
   
 }

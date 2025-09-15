@@ -22,7 +22,7 @@ Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
 C:\Users\bl91\Desktop\RTOS\rtos_prj.uvprojx
-Project File Date:  09/09/2025
+Project File Date:  09/15/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
@@ -84,30 +84,67 @@ main.c(5): warning: In file included from...
 C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
 #include "rtx_os.h"                     // RTX OS definitions
                                         ^
-main.c(9): warning: no previous prototype for function 'SystemCoreClockConfigure' [-Wmissing-prototypes]
-void SystemCoreClockConfigure(void) {
+main.c(16): warning: designated initializers are a C99 feature [-Wc99-designator]
+  .name = "Blink",
+  ^
+main.c(22): warning: designated initializers are a C99 feature [-Wc99-designator]
+  .name = "UART",
+  ^
+main.c(29): warning: function 'TaskBlink' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+main.c(38): warning: no previous prototype for function 'delayMs' [-Wmissing-prototypes]
+void delayMs(int n){
      ^
-main.c(9): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void SystemCoreClockConfigure(void) {
+main.c(38): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void delayMs(int n){
 ^
 static 
-main.c(52): warning: no newline at end of file [-Wnewline-eof]
+main.c(43): warning: no previous prototype for function 'LED_blink' [-Wmissing-prototypes]
+void LED_blink(int value) {
+     ^
+main.c(43): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void LED_blink(int value) {
+^
+static 
+main.c(63): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    GPIOA->MODER &= ~0x00000C00;    /* clear pin mode */
+                 ~~ ^~~~~~~~~~~
+main.c(89): warning: no newline at end of file [-Wnewline-eof]
 }
  ^
-main.c(48): warning: unused variable 'button_msk' [-Wunused-variable]
+main.c(69): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+     uint8_t c='c';
+             ^
+main.c(84): warning: unused variable 'button_msk' [-Wunused-variable]
   uint32_t button_msk = (1U << Buttons_GetCount()) - 1;
            ^
-main.c(45): warning: no previous extern declaration for non-static variable 'osKernelConfigStatus' [-Wmissing-variable-declarations]
+main.c(69): warning: unused variable 'c' [-Wunused-variable]
+     uint8_t c='c';
+             ^
+main.c(58): warning: no previous extern declaration for non-static variable 'osKernelConfigStatus' [-Wmissing-variable-declarations]
 int osKernelConfigStatus;
     ^
-main.c(45): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+main.c(58): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 int osKernelConfigStatus;
 ^
-15 warnings generated.
+main.c(28): warning: unused function 'TaskBlink' [-Wunused-function]
+static void TaskBlink(void *arg)
+            ^
+main.c(13): warning: unused function 'TaskUART' [-Wunused-function]
+static void TaskUART(void *arg);
+            ^
+main.c(15): warning: unused variable 'blinkAttr' [-Wunused-const-variable]
+static const osThreadAttr_t blinkAttr = {
+                            ^
+main.c(21): warning: unused variable 'uartAttr' [-Wunused-const-variable]
+static const osThreadAttr_t uartAttr = {
+                            ^
+26 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=12944 RO-data=716 RW-data=164 ZI-data=35792  
-".\Objects\rtos_prj.axf" - 0 Error(s), 15 Warning(s).
+Program Size: Code=12952 RO-data=716 RW-data=164 ZI-data=35792  
+".\Objects\rtos_prj.axf" - 0 Error(s), 26 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -187,31 +224,31 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:RTOS2:Keil RTX5:Source:5.9.0
       Include file:  Include/rtx_os.h
-      Source file:   Source/rtx_kernel.c
-      Source file:   Template/Events.c
-      Source file:   Source/rtx_mutex.c
-      Source file:   Template/main.c
-      Source file:   Template/Semaphore.c
-      Source file:   Template/Timer.c
-      Source file:   Source/rtx_mempool.c
       Include file:  Config/RTX_Config.h
-      Source file:   Source/rtx_system.c
-      Source file:   Source/rtx_evr.c
-      Source file:   Source/rtx_lib.c
-      Source file:   Source/rtx_thread.c
-      Source file:   Source/rtx_semaphore.c
-      Source file:   Source/GCC/irq_armv7m.S
-      Source file:   Template/Thread.c
-      Source file:   Template/Mutex.c
-      Source file:   Template/MemPool.c
       Source file:   Config/RTX_Config.c
+      Source file:   Template/Timer.c
       Source file:   Source/rtx_delay.c
-      Source file:   Source/rtx_evflags.c
-      Source file:   Source/rtx_msgqueue.c
-      Source file:   Template/MsgQueue.c
-      Source file:   Source/rtx_memory.c
-      Source file:   Template/svc_user.c
+      Source file:   Source/rtx_kernel.c
       Source file:   Source/rtx_timer.c
+      Source file:   Template/MsgQueue.c
+      Source file:   Source/rtx_semaphore.c
+      Source file:   Source/rtx_system.c
+      Source file:   Template/Thread.c
+      Source file:   Template/Semaphore.c
+      Source file:   Source/rtx_msgqueue.c
+      Source file:   Source/rtx_evr.c
+      Source file:   Source/GCC/irq_armv7m.S
+      Source file:   Source/rtx_thread.c
+      Source file:   Template/MemPool.c
+      Source file:   Source/rtx_mempool.c
+      Source file:   Template/svc_user.c
+      Source file:   Template/Events.c
+      Source file:   Source/rtx_evflags.c
+      Source file:   Template/Mutex.c
+      Source file:   Source/rtx_memory.c
+      Source file:   Template/main.c
+      Source file:   Source/rtx_lib.c
+      Source file:   Source/rtx_mutex.c
 
    * Component: Keil.NUCLEO-F401RE::Board Support:Buttons:1.1.0
       Source file:   Boards/ST/NUCLEO-F401RE/Common/Buttons_NUCLEO_F401RE.c
@@ -220,15 +257,15 @@ Package Vendor: Keil
       Source file:   Boards/ST/NUCLEO-F401RE/Common/LED_NUCLEO_F401RE.c
 
    * Component: Keil::Device:STM32Cube Framework:Classic:1.8.1
-      Source file:   MDK/Templates_LL/Src/main.c
-      Include file:  CMSIS/Driver/Config/RTE_Device.h
-      Source file:   MDK/Templates/Src/stm32f4xx_it.c
-      Source file:   MDK/Templates/Src/main.c
-      Include file:  MDK/Templates/Inc/stm32f4xx_hal_conf.h
-      Source file:   MDK/Templates/Src/stm32f4xx_hal_msp.c
-      Include file:  MDK/Templates/Inc/main.h
       Include file:  MDK/Templates_LL/Inc/main.h
+      Include file:  CMSIS/Driver/Config/RTE_Device.h
+      Include file:  MDK/Templates/Inc/stm32f4xx_hal_conf.h
       Include file:  MDK/Templates/Inc/stm32f4xx_it.h
+      Include file:  MDK/Templates/Inc/main.h
+      Source file:   MDK/Templates/Src/main.c
+      Source file:   MDK/Templates/Src/stm32f4xx_hal_msp.c
+      Source file:   MDK/Templates/Src/stm32f4xx_it.c
+      Source file:   MDK/Templates_LL/Src/main.c
 
    * Component: Keil::Device:STM32Cube HAL:Common:1.8.1
       Include file:  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -245,14 +282,14 @@ Package Vendor: Keil
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:RCC:1.8.1
-      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
 
    * Component: Keil::Device:Startup:2.6.3
-      Source file:   MDK/Device/Source/ARM/STM32F401xx_OPT.s
       Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
-      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F401xx_OPT.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
 Build Time Elapsed:  00:00:01
 </pre>
