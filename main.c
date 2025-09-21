@@ -11,6 +11,10 @@ extern void  USART2_init(void);
 
 static void TaskBlink(void *arg);
 static void TaskUART(void *arg);
+static osSemaphoreId_t sem1; // turno Task1
+static osSemaphoreId_t sem2; // turno Task2
+
+
 
 static const osThreadAttr_t blinkAttr = {
   .name = "Blink",
@@ -24,20 +28,40 @@ static const osThreadAttr_t uartAttr = {
   .priority = osPriorityBelowNormal
 };
 
+
 void LED_blink(void) {
-   GPIOA->ODR ^= (1U << 5);   // PA5
+   //GPIOA->ODR ^= (1U << 5);  // PA5 on
+   GPIOA->ODR = (1U << 5);  // PA5 on
 }
-static void TaskBlink(void *arg)
+
+void LED_blink_6(void) {
+   //GPIOA->ODR ^= (1U << 6);  // PA6 on
+   GPIOA->ODR = (1U << 6);  // PA6 on
+}
+
+static void TaskBlink5(void *arg)
 {
   (void)arg;
   for (;;)
   {
+    osSemaphoreAcquire(sem1, osWaitForever); // aspetta il turno
     LED_blink();
-    osDelay(1100);             // 500 ms (usa il tick di RTOS)
+    osDelay(2000);    // 500 ms (usa il tick di RTOS)
+    osSemaphoreRelease(sem2);   // passa il turno a Task2 (intervento)
   }
-}
+} 
 
-
+static void TaskBlink6(void *arg)
+{
+  (void)arg;
+  for (;;)
+  {
+    osSemaphoreAcquire(sem2, osWaitForever); // aspetta il turno
+    LED_blink_6();
+    osDelay(2000); 
+    osSemaphoreRelease(sem1);   // passa il turno a Task1 (intervento)    
+  }
+} 
 
 
 
@@ -50,6 +74,7 @@ int main (void)
     RCC->AHB1ENR |=  1;             /* enable GPIOA clock */
     GPIOA->MODER &= ~0x00000C00;    /* clear pin mode */
     GPIOA->MODER |=  0x00000400;    /* set pin to output mode */
+    GPIOA->MODER |=  (1U << (6 * 2));  // set PA6 come output
 
     USART2_init();                  /* initialize USART2 */
     
@@ -68,11 +93,14 @@ int main (void)
      }
   
   
-  
-  uint32_t button_msk = (1U << Buttons_GetCount()) - 1;
   //kernel init
   osKernelInitialize();
-  osThreadNew(TaskBlink, NULL, &blinkAttr);  // 2) crea i threa
-   osKernelStart(); 
+  sem1 = osSemaphoreNew(1, 1, NULL);
+  sem2 = osSemaphoreNew(1, 0, NULL);
+     
+     
+  osThreadNew(TaskBlink5, NULL, &blinkAttr);  // 2) crea i thread
+  osThreadNew(TaskBlink6, NULL, &blinkAttr);  // 2) crea i thread
+  osKernelStart(); 
   for(;;) {}
 }
