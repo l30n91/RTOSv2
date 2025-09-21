@@ -104,26 +104,36 @@ main.c(37): note: declare 'static' if the function is not intended to be used ou
 void LED_blink_6(void) {
 ^
 static 
-main.c(43): warning: function 'TaskBlink5' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+main.c(43): warning: no previous prototype for function 'LED_blink_7' [-Wmissing-prototypes]
+void LED_blink_7(void) {
+     ^
+main.c(43): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void LED_blink_7(void) {
+^
+static 
+main.c(50): warning: function 'TaskBlink5' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
 {
 ^
-main.c(55): warning: function 'TaskBlink6' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+main.c(62): warning: function 'TaskBlink6' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
 {
 ^
-main.c(75): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+main.c(75): warning: function 'TaskBlink7' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+main.c(92): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
     GPIOA->MODER &= ~0x00000C00;    /* clear pin mode */
                  ~~ ^~~~~~~~~~~
-main.c(106): warning: no newline at end of file [-Wnewline-eof]
+main.c(125): warning: no newline at end of file [-Wnewline-eof]
 }
  ^
-main.c(82): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+main.c(99): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
      uint8_t c='c';
              ^
-main.c(82): warning: unused variable 'c' [-Wunused-variable]
-main.c(70): warning: no previous extern declaration for non-static variable 'osKernelConfigStatus' [-Wmissing-variable-declarations]
+main.c(99): warning: unused variable 'c' [-Wunused-variable]
+main.c(87): warning: no previous extern declaration for non-static variable 'osKernelConfigStatus' [-Wmissing-variable-declarations]
 int osKernelConfigStatus;
     ^
-main.c(70): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+main.c(87): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 int osKernelConfigStatus;
 ^
 main.c(12): warning: unused function 'TaskBlink' [-Wunused-function]
@@ -135,11 +145,11 @@ static void TaskUART(void *arg);
 main.c(25): warning: unused variable 'uartAttr' [-Wunused-const-variable]
 static const osThreadAttr_t uartAttr = {
                             ^
-25 warnings generated.
+27 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=18356 RO-data=760 RW-data=168 ZI-data=36296  
-".\Objects\rtos_prj.axf" - 0 Error(s), 25 Warning(s).
+Program Size: Code=18472 RO-data=760 RW-data=168 ZI-data=36296  
+".\Objects\rtos_prj.axf" - 0 Error(s), 27 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -286,7 +296,7 @@ Package Vendor: Keil
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s
       Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>
