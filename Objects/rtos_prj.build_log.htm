@@ -27,27 +27,74 @@ Project File Date:  09/27/2025
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-Led.cpp(1): warning: In file included from...
-../RTOS/Led.h(7): warning: padding size of 'Led' with 2 bytes to alignment boundary [-Wpadded]
-class Led {
-      ^
-Led.cpp(10): warning: use of old-style cast [-Wold-style-cast]
-    port_->BSRR = (uint32_t)pin_ << 16U;
-                  ^         ~~~~
-Led.cpp(19): warning: missing field 'attr_bits' initializer [-Wmissing-field-initializers]
-    osThreadAttr_t attr={0};
-                          ^
-Led.cpp(17): warning: unused parameter 'periodMs' [-Wunused-parameter]
-void Led::startBlinkTask(uint32_t periodMs) {
-                                  ^
-Led.cpp(32): warning: function 'runBlink' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-void Led::runBlink(uint32_t periodMs) {
-                                      ^
-5 warnings generated.
-compiling Led.cpp...
+main.c(2): warning: // comments are not allowed in this language [-Wcomment]
+#include "Board_LED.h"                  // ::Board Support:LED
+                                        ^
+main.c(4): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(31): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
+//  ==== Enumerations, structures, defines ====
+^
+main.c(4): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(32): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_def.h(32): warning: In file included from...
+./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
+//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
+^
+main.c(4): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(32): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
+#endif  // RTX_DEF_H_
+        ^
+main.c(4): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
+/// Kernel Information
+^
+main.c(5): warning: In file included from...
+../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_def.h"                    // RTX Configuration definitions
+                                        ^
+main.c(5): warning: In file included from...
+../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(31): warning: In file included from...
+../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
+//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
+^
+main.c(5): warning: In file included from...
+../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(31): warning: In file included from...
+../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
+typedef bool bool_t;
+        ^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+main.c(5): warning: In file included from...
+../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(31): warning: In file included from...
+../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
+../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
+/// xPSR_Initialization Value
+^
+main.c(5): warning: In file included from...
+../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(35): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
+/// IRQ Handler.
+^
+main.c(5): warning: In file included from...
+../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(38): warning: In file included from...
+C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
+#include "rtx_os.h"                     // RTX OS definitions
+                                        ^
+main.c(45): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+  GPIOA->MODER &= ~0x00000C00;    /* clear pin mode */
+               ~~ ^~~~~~~~~~~
+main.c(65): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+13 warnings generated.
+compiling main.c...
 linking...
-Program Size: Code=18548 RO-data=824 RW-data=168 ZI-data=36296  
-".\Objects\rtos_prj.axf" - 0 Error(s), 5 Warning(s).
+Program Size: Code=17400 RO-data=724 RW-data=168 ZI-data=36296  
+".\Objects\rtos_prj.axf" - 0 Error(s), 13 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -194,7 +241,7 @@ Package Vendor: Keil
       Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
       Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

@@ -6,91 +6,38 @@
 #include "stm32f4xx.h"                  // Device header
 #include "cmsis_os2.h"
 
+
 extern void SystemCoreClockConfigure(void);
 extern void USART2_init(void);
 extern void USART2_Write(uint8_t*);
 
-static void TaskBlink(void *arg);
-static void TaskUART(void *arg);
-static osSemaphoreId_t sem1; // turno Task1
-static osSemaphoreId_t sem2; // turno Task2
-static osSemaphoreId_t sem3; // turno Task2
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+void Led_Init(void);
+void Led_createBlinkTask(uint32_t periodMs);
 
-static const osThreadAttr_t blinkAttr = {
-  .name = "Blink",
-  .stack_size = 512,         // bytes (aumenta se usi printf ecc.)
-  .priority = osPriorityNormal
-};
-
-static const osThreadAttr_t uartAttr = {
-  .name = "UART",
-  .stack_size = 768,
-  .priority = osPriorityBelowNormal
-};
-
-
-void LED_blink_5(void) {
-
-  char string[]= "LED PA5 is blinking\r\n";
-  USART2_Write((uint8_t*)string);
-  GPIOA->ODR = (1U << 5);  // PA5 on
+#ifdef __cplusplus
 }
-
-void LED_blink_6(void) {
-   char string[]= "LED PA6 is blinking\r\n";
-   USART2_Write((uint8_t*)string);
-   GPIOA->ODR = (1U << 6);  // PA6 on
-}
+#endif
 
 
-void LED_blink_7(void) {
-   char string[]= "LED PA7 is blinking\r\n";
-   USART2_Write((uint8_t*)string);
-   GPIOA->ODR = (1U << 7);  // PA7 on
-}
-
-
-static void TaskBlink5(void *arg)
-{
-  (void)arg;
-  for (;;)
-  {
-    osSemaphoreAcquire(sem1, osWaitForever); // aspetta il turno
-    LED_blink_5();
-    osDelay(2000);    
-    osSemaphoreRelease(sem2);   // passa il turno a Task2 (intervento)
-  }
-} 
-
-static void TaskBlink6(void *arg)
-{
-  (void)arg;
-  for (;;)
-  {
-    osSemaphoreAcquire(sem2, osWaitForever); // aspetta il turno
-    LED_blink_6();
-    osDelay(2000); 
-    osSemaphoreRelease(sem3);   // passa il turno a Task1 (intervento)    
-  }
-} 
+//static osSemaphoreId_t sem1; // turno Task1
+//static osSemaphoreId_t sem2; // turno Task2
+//static osSemaphoreId_t sem3; // turno Task2
 
 
 
-static void TaskBlink7(void *arg)
-{
-  (void)arg;
-  for (;;)
-  {
-    osSemaphoreAcquire(sem3, osWaitForever); // aspetta il turno
-    LED_blink_7();
-    osDelay(2000); 
-    osSemaphoreRelease(sem1);   // passa il turno a Task1 (intervento)    
-  }
-} 
 
 
-int osKernelConfigStatus;
+
+
+
+
+
+
+
 int main (void)
 {
   
@@ -100,16 +47,19 @@ int main (void)
   GPIOA->MODER |=  (1U << (6 * 2));  // set PA6 come output
   GPIOA->MODER |=  (1U << (7 * 2));  // set PA6 come output
   USART2_init();                  /* initialize USART2 */
-
+  
   //kernel init
   osKernelInitialize();
-  sem1 = osSemaphoreNew(1, 1, NULL);
-  sem2 = osSemaphoreNew(1, 0, NULL);
-  sem3 = osSemaphoreNew(1, 0, NULL);
+  
+  Led_Init();
+  Led_createBlinkTask(2000);
+  
+  
+  //sem1 = osSemaphoreNew(1, 1, NULL);
+  //sem2 = osSemaphoreNew(1, 0, NULL);
+  //sem3 = osSemaphoreNew(1, 0, NULL);
 
-  osThreadNew(TaskBlink5, NULL, &blinkAttr);  /*Thread Creation*/
-  osThreadNew(TaskBlink6, NULL, &blinkAttr);  /*Thread Creation*/
-  osThreadNew(TaskBlink7, NULL, &blinkAttr);  /*Thread Creation*/
+
   osKernelStart(); 
   for(;;) {}
 }
