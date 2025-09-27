@@ -6,34 +6,7 @@
 
 
 
-/*----------------------------------------------------------------------------
-  Initialize UART pins, Baudrate
-// *----------------------------------------------------------------------------*/
-//void USART2_init (void) {
-//    RCC->AHB1ENR |= 1;                         /* Enable GPIOA clock */
-//    RCC->APB1ENR |= 0x00020000;               /* Enable USART2 clock */
 
-//    /* Configure PA3 for USART2 RX */
-//    GPIOA->AFR[0] &= ~0xF000;
-//    GPIOA->AFR[0] |=  0x7000;              /* alt1 for USART2 */
-//    GPIOA->MODER  &= ~0x00C0;
-//    GPIOA->MODER  |=  0x0080;            /* enable alternate function for PA3 */
-
-//    USART2->BRR =     BAUDRATE_115200; /* 115200 baud @ 16MHz */
-//    USART2->CR1 =     0x0004;         /* enable Rx, 8-bit data */
-//    USART2->CR2 =     0x0000;        /* 1 stop bit */
-//    USART2->CR3 =     0x0000;       /* no flow control */
-//    USART2->CR1 |=    0x2000;      /* enable USART2 */
-//}
-
-
-
-
-///* Write a character to USART2 */
-//void USART2_write (int ch) {
-//    while (!(USART2->SR & 0x0080)) {}   /* wait until Tx buffer empty*/
-//    USART2->DR = (ch & 0xFF);
-//}
 void USART2_init(void) {
     // Clock GPIOA e USART2
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
@@ -56,4 +29,16 @@ void USART2_init(void) {
 
     USART2->CR1 |= USART_CR1_TE | USART_CR1_RE;  // << abilita TX e RX
     USART2->CR1 |= USART_CR1_UE;                 // abilita USART
+}
+
+void USART2_Write(uint8_t* p_string){
+
+   while(*p_string !='\0')
+   {
+     while(!(USART2->SR & USART_SR_TXE)); /* wait until TX is enabled*/
+     
+     USART2->DR= *p_string;
+     
+     p_string ++;       
+   }
 }
