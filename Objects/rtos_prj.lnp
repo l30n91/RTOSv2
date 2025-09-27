@@ -2,6 +2,7 @@
 ".\objects\main.o"
 ".\objects\systemclockconf.o"
 ".\objects\usart2.o"
+".\objects\led.o"
 ".\objects\buttons_nucleo_f401re.o"
 ".\objects\led_nucleo_f401re.o"
 ".\objects\irq_armv7m.o"

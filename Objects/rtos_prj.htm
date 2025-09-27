@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\rtos_prj.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\rtos_prj.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Sat Sep 27 10:52:43 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Sat Sep 27 16:36:12 2025
 <BR><P>
 <H3>Maximum Stack Usage =        232 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -840,16 +840,16 @@ Global Symbols
 <P><STRONG><a name="[10b]"></a>EvrRtxMutexAcquireTimeout</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, rtx_evr.o(.text.EvrRtxMutexAcquireTimeout))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = EvrRtxMutexAcquireTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadDelayTick
+<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadDelayTick
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
 </UL>
 
 <P><STRONG><a name="[f4]"></a>EvrRtxMutexAcquired</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, rtx_evr.o(.text.EvrRtxMutexAcquired))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EvrRtxMutexAcquired
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
+<BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerRelease
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerRelease
 </UL>
 
 <P><STRONG><a name="[14b]"></a>EvrRtxMutexCreated</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, rtx_evr.o(.text.EvrRtxMutexCreated))
@@ -873,14 +873,14 @@ Global Symbols
 <P><STRONG><a name="[d1]"></a>EvrRtxMutexError</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, rtx_evr.o(.text.EvrRtxMutexError))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EvrRtxMutexError
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexDelete
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexNew
+<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexNew
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexDelete
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexAcquire
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexNew
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexDelete
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
 </UL>
 
 <P><STRONG><a name="[d3]"></a>EvrRtxMutexNew</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, rtx_evr.o(.text.EvrRtxMutexNew), UNUSED, KEPT)
@@ -904,8 +904,8 @@ Global Symbols
 <P><STRONG><a name="[f2]"></a>EvrRtxMutexReleased</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, rtx_evr.o(.text.EvrRtxMutexReleased))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EvrRtxMutexReleased
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerRelease
+<BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerRelease
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
 </UL>
 
 <P><STRONG><a name="[12d]"></a>EvrRtxSemaphoreAcquire</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, rtx_evr.o(.text.EvrRtxSemaphoreAcquire))
@@ -1328,10 +1328,10 @@ Global Symbols
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MemHeadPtr
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMemoryFree
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexDestroy
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueNew
+<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueNew
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadNew
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadFree
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexDestroy
 </UL>
 
 <P><STRONG><a name="[dd]"></a>osRtxMemoryInit</STRONG> (Thumb, 150 bytes, Stack size 40 bytes, rtx_memory.o(.text.osRtxMemoryInit))
@@ -1368,12 +1368,12 @@ Global Symbols
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atomic_link_put
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMemoryBlockFree
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexDestroy
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueGet
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueGet
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMessageQueuePostProcess
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueNew
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadNew
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadFree
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexDestroy
 </UL>
 
 <P><STRONG><a name="[e6]"></a>osRtxMemoryPoolInit</STRONG> (Thumb, 152 bytes, Stack size 40 bytes, rtx_mempool.o(.text.osRtxMemoryPoolInit))
@@ -1497,12 +1497,12 @@ Global Symbols
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxKernelGetState
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadReadyPut
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexDelete
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadWaitExit
+<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadWaitExit
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxTick_Handler
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxPendSV_Handler
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadNew
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexDelete
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
 </UL>
 
 <P><STRONG><a name="[119]"></a>osRtxThreadJoinWakeup</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, rtx_thread.o(.text.osRtxThreadJoinWakeup))
@@ -1519,9 +1519,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadObject
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerUnlock
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueGet
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueGet
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueuePut
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMessageQueuePostProcess
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxKernelStart
@@ -1530,6 +1528,8 @@ Global Symbols
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxSemaphorePostProcess
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxSemaphoreRelease
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerRelease
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerUnlock
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
 </UL>
 
 <P><STRONG><a name="[11b]"></a>osRtxThreadListPut</STRONG> (Thumb, 118 bytes, Stack size 32 bytes, rtx_thread.o(.text.osRtxThreadListPut))
@@ -1537,12 +1537,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadObject
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueGet
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueGet
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueuePut
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadReadyPut
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxSemaphoreAcquire
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadListSort
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
 </UL>
 
 <P><STRONG><a name="[111]"></a>osRtxThreadListRemove</STRONG> (Thumb, 50 bytes, Stack size 4 bytes, rtx_thread.o(.text.osRtxThreadListRemove))
@@ -1561,9 +1561,9 @@ Global Symbols
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadListRemove
 <LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxObject
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerUnlock
+<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerRestore
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerUnlock
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerRestore
 </UL>
 
 <P><STRONG><a name="[112]"></a>osRtxThreadReadyPut</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, rtx_thread.o(.text.osRtxThreadReadyPut))
@@ -1628,11 +1628,11 @@ Global Symbols
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadGetRunning
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxKernelGetState
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueGet
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueGet
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueuePut
 <LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxDelay
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxSemaphoreAcquire
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
 </UL>
 
 <P><STRONG><a name="[ea]"></a>osRtxThreadWaitExit</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, rtx_thread.o(.text.osRtxThreadWaitExit))
@@ -1644,9 +1644,7 @@ Global Symbols
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadDelayRemove
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadReadyPut
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerUnlock
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueGet
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueGet
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueuePut
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMessageQueuePostProcess
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadJoinWakeup
@@ -1654,6 +1652,8 @@ Global Symbols
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxSemaphorePostProcess
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxSemaphoreRelease
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerRelease
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerUnlock
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
 </UL>
 
 <P><STRONG><a name="[79]"></a>osRtxTick_Handler</STRONG> (Thumb, 272 bytes, Stack size 24 bytes, rtx_system.o(.text.osRtxTick_Handler))
@@ -2150,10 +2150,10 @@ Local Symbols
 <P><STRONG><a name="[f3]"></a>osRtxObject</STRONG> (Thumb, 10 bytes, Stack size 4 bytes, rtx_mutex.o(.text.osRtxObject))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = osRtxObject
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerUnlock
+<BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerRelease
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerUnlock
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerRelease
 </UL>
 
 <P><STRONG><a name="[cf]"></a>IsException</STRONG> (Thumb, 20 bytes, Stack size 4 bytes, rtx_mutex.o(.text.IsException), UNUSED, KEPT)
@@ -2196,17 +2196,16 @@ Local Symbols
 <P><STRONG><a name="[148]"></a>IsMutexPtrValid</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, rtx_mutex.o(.text.IsMutexPtrValid))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = IsMutexPtrValid
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexDelete
+<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexNew
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexDelete
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexRelease
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexAcquire
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexNew
 </UL>
 
 <P><STRONG><a name="[4d]"></a>svcRtxMutexAcquire</STRONG> (Thumb, 374 bytes, Stack size 40 bytes, rtx_mutex.o(.text.svcRtxMutexAcquire))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = svcRtxMutexAcquire &rArr; osRtxThreadListSort &rArr; osRtxThreadListPut &rArr; osRtxThreadObject
 </UL>
-<BR>[Calls]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadGetRunning
-<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsMutexPtrValid
+<BR>[Calls]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsMutexPtrValid
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexId
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxObject
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMutexNotAcquired
@@ -2217,14 +2216,14 @@ Local Symbols
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadListPut
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadWaitEnter
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadListSort
+<LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadGetRunning
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_mutex.o(.text.osMutexAcquire)
 </UL>
 <P><STRONG><a name="[50]"></a>svcRtxMutexRelease</STRONG> (Thumb, 416 bytes, Stack size 40 bytes, rtx_mutex.o(.text.svcRtxMutexRelease))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = svcRtxMutexRelease &rArr; osRtxThreadWaitExit &rArr; osRtxThreadDispatch &rArr; osRtxThreadReadyPut &rArr; osRtxThreadListPut &rArr; osRtxThreadObject
 </UL>
-<BR>[Calls]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadGetRunning
-<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsMutexPtrValid
+<BR>[Calls]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsMutexPtrValid
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexId
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxObject
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMutexReleased
@@ -2233,18 +2232,19 @@ Local Symbols
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadListGet
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadDispatch
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadWaitExit
+<LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadGetRunning
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_mutex.o(.text.osMutexRelease)
 </UL>
 <P><STRONG><a name="[4e]"></a>svcRtxMutexDelete</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, rtx_mutex.o(.text.svcRtxMutexDelete))
 <BR><BR>[Stack]<UL><LI>Max Depth = 156<LI>Call Chain = svcRtxMutexDelete &rArr; osRtxMutexOwnerUnlock &rArr; osRtxThreadWaitExit &rArr; osRtxThreadDispatch &rArr; osRtxThreadReadyPut &rArr; osRtxThreadListPut &rArr; osRtxThreadObject
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexDestroy
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerUnlock
-<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsMutexPtrValid
+<BR>[Calls]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsMutexPtrValid
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexId
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMutexError
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadDispatch
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexDestroy
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMutexOwnerUnlock
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_mutex.o(.text.osMutexDelete)
 </UL>

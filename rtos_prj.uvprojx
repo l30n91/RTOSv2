@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\AppData\Local\Arm\Packs\ARM\CMSIS-RTX\5.9.0\Source</IncludePath>
+              <IncludePath>..\..\AppData\Local\Arm\Packs\ARM\CMSIS-RTX\5.9.0\Source;..\RTOS</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -398,6 +398,16 @@
               <FileName>usart2.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\usart2.c</FilePath>
+            </File>
+            <File>
+              <FileName>Led.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Led.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Led.h</FilePath>
             </File>
           </Files>
         </Group>
