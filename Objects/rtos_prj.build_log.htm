@@ -84,17 +84,21 @@ main.c(5): warning: In file included from...
 C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
 #include "rtx_os.h"                     // RTX OS definitions
                                         ^
+main.c(19): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void Led_createBlinkTask();
+                        ^
+                         void
 main.c(45): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
   GPIOA->MODER &= ~0x00000C00;    /* clear pin mode */
                ~~ ^~~~~~~~~~~
 main.c(65): warning: no newline at end of file [-Wnewline-eof]
 }
  ^
-13 warnings generated.
+14 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=17400 RO-data=724 RW-data=168 ZI-data=36296  
-".\Objects\rtos_prj.axf" - 0 Error(s), 13 Warning(s).
+Program Size: Code=17396 RO-data=724 RW-data=168 ZI-data=36296  
+".\Objects\rtos_prj.axf" - 0 Error(s), 14 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -173,32 +177,32 @@ Package Vendor: Keil
       Source file:   CMSIS/RTOS2/Source/os_systick.c
 
    * Component: ARM::CMSIS:RTOS2:Keil RTX5:Source:5.9.0
+      Include file:  Config/RTX_Config.h
+      Source file:   Template/Events.c
+      Source file:   Template/MemPool.c
+      Source file:   Template/MsgQueue.c
+      Source file:   Template/Mutex.c
+      Source file:   Template/Semaphore.c
+      Source file:   Template/Thread.c
       Include file:  Include/rtx_os.h
       Source file:   Config/RTX_Config.c
-      Include file:  Config/RTX_Config.h
-      Source file:   Template/Timer.c
-      Source file:   Template/Thread.c
-      Source file:   Source/GCC/irq_armv7m.S
-      Source file:   Template/MsgQueue.c
-      Source file:   Template/svc_user.c
-      Source file:   Source/rtx_msgqueue.c
-      Source file:   Source/rtx_evr.c
-      Source file:   Template/Semaphore.c
-      Source file:   Source/rtx_delay.c
-      Source file:   Source/rtx_timer.c
-      Source file:   Source/rtx_mutex.c
-      Source file:   Template/Mutex.c
-      Source file:   Source/rtx_semaphore.c
-      Source file:   Source/rtx_mempool.c
-      Source file:   Source/rtx_system.c
-      Source file:   Source/rtx_lib.c
-      Source file:   Template/Events.c
-      Source file:   Source/rtx_kernel.c
       Source file:   Template/main.c
+      Source file:   Source/rtx_mempool.c
+      Source file:   Source/rtx_timer.c
+      Source file:   Source/GCC/irq_armv7m.S
+      Source file:   Source/rtx_system.c
+      Source file:   Source/rtx_semaphore.c
+      Source file:   Source/rtx_mutex.c
+      Source file:   Source/rtx_evr.c
+      Source file:   Source/rtx_kernel.c
+      Source file:   Source/rtx_lib.c
+      Source file:   Source/rtx_thread.c
+      Source file:   Source/rtx_msgqueue.c
+      Source file:   Template/Timer.c
       Source file:   Source/rtx_evflags.c
       Source file:   Source/rtx_memory.c
-      Source file:   Source/rtx_thread.c
-      Source file:   Template/MemPool.c
+      Source file:   Template/svc_user.c
+      Source file:   Source/rtx_delay.c
 
    * Component: Keil.NUCLEO-F401RE::Board Support:Buttons:1.1.0
       Source file:   Boards/ST/NUCLEO-F401RE/Common/Buttons_NUCLEO_F401RE.c
@@ -207,15 +211,15 @@ Package Vendor: Keil
       Source file:   Boards/ST/NUCLEO-F401RE/Common/LED_NUCLEO_F401RE.c
 
    * Component: Keil::Device:STM32Cube Framework:Classic:1.8.1
-      Include file:  MDK/Templates_LL/Inc/main.h
       Include file:  MDK/Templates/Inc/stm32f4xx_hal_conf.h
+      Include file:  CMSIS/Driver/Config/RTE_Device.h
+      Include file:  MDK/Templates/Inc/main.h
+      Include file:  MDK/Templates/Inc/stm32f4xx_it.h
+      Source file:   MDK/Templates_LL/Src/main.c
+      Include file:  MDK/Templates_LL/Inc/main.h
+      Source file:   MDK/Templates/Src/stm32f4xx_hal_msp.c
       Source file:   MDK/Templates/Src/main.c
       Source file:   MDK/Templates/Src/stm32f4xx_it.c
-      Include file:  MDK/Templates/Inc/main.h
-      Source file:   MDK/Templates_LL/Src/main.c
-      Source file:   MDK/Templates/Src/stm32f4xx_hal_msp.c
-      Include file:  CMSIS/Driver/Config/RTE_Device.h
-      Include file:  MDK/Templates/Inc/stm32f4xx_it.h
 
    * Component: Keil::Device:STM32Cube HAL:Common:1.8.1
       Include file:  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -236,12 +240,12 @@ Package Vendor: Keil
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
 
    * Component: Keil::Device:Startup:2.6.3
-      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s
       Source file:   MDK/Device/Source/ARM/STM32F401xx_OPT.s
-      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
       Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

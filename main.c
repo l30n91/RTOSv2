@@ -16,7 +16,7 @@ extern "C" {
 #endif
 
 void Led_Init(void);
-void Led_createBlinkTask(uint32_t periodMs);
+void Led_createBlinkTask();
 
 #ifdef __cplusplus
 }
@@ -52,7 +52,7 @@ int main (void)
   osKernelInitialize();
   
   Led_Init();
-  Led_createBlinkTask(2000);
+  Led_createBlinkTask();
   
   
   //sem1 = osSemaphoreNew(1, 1, NULL);

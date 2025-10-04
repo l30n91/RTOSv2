@@ -1,7 +1,7 @@
-#ifndef LED_HPP
+#ifndef LED_HPP 
 #define LED_HPP
 
-#include "stm32f4xx.h"   // o quello della tua MCU
+#include "stm32f4xx.h"  
 #include "cmsis_os2.h"   // RTOS API
 
 class Led {
