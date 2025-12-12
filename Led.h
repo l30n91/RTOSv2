@@ -4,21 +4,24 @@
 #include "stm32f4xx.h"  
 #include "cmsis_os2.h"   // RTOS API
 
+
+
 class Led {
-public:Led(GPIO_TypeDef* port, uint16_t pin);
-
-    void on();
-    void off();
-    void toggle();
-
-    // Avvia un thread che fa blinking (periodo in ms)
-    void createBlinkTask(void);
-
-private:
-    static void blinkThread(void* arg);  // trampolino statico
-    void runBlink(uint32_t periodMs);    // corpo del task
-    GPIO_TypeDef* port_;
-    uint16_t pin_;
+  public: Led(GPIO_TypeDef* port, uint16_t pin):port_(port), pin_(pin){} //parameters initialization :port_(port), pin_(pin){};
+    void BlinkLed_Task(uint32_t period);
+    void BlinkLed_Toggle(void);
+    void BlinkLed_CreateTask(void);
+    static void  BlinkLed_Task_Wrap(void*); //this method needs to be STATIC because it is needed for RTOS
+    
+  private:
+     GPIO_TypeDef* port_; 
+     uint16_t pin_;
 };
+
+
+
+
+
+
 
 #endif // LED_HPP

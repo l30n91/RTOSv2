@@ -21,84 +21,27 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
-C:\Users\bl91\Desktop\RTOS\rtos_prj.uvprojx
-Project File Date:  09/27/2025
+C:\Users\bl91\Desktop\RTOS - Copia\rtos_prj.uvprojx
+Project File Date:  12/04/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-main.c(2): warning: // comments are not allowed in this language [-Wcomment]
-#include "Board_LED.h"                  // ::Board Support:LED
-                                        ^
-main.c(4): warning: In file included from...
-C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(31): warning: In file included from...
-C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\cmsis_os2.h(93): warning: // comments are not allowed in this language [-Wcomment]
-//  ==== Enumerations, structures, defines ====
-^
-main.c(4): warning: In file included from...
-C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(32): warning: In file included from...
-C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_def.h(32): warning: In file included from...
-./RTE/CMSIS\RTX_Config.h(38): warning: // comments are not allowed in this language [-Wcomment]
-//-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
-^
-main.c(4): warning: In file included from...
-C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(32): warning: In file included from...
-C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include/rtx_def.h(73): warning: // comments are not allowed in this language [-Wcomment]
-#endif  // RTX_DEF_H_
-        ^
-main.c(4): warning: In file included from...
-C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_os.h(40): warning: // comments are not allowed in this language [-Wcomment]
-/// Kernel Information
-^
-main.c(5): warning: In file included from...
-../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(30): warning: // comments are not allowed in this language [-Wcomment]
-#include "rtx_def.h"                    // RTX Configuration definitions
-                                        ^
-main.c(5): warning: In file included from...
-../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(31): warning: In file included from...
-../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(29): warning: // comments are not allowed in this language [-Wcomment]
-//lint -emacro((923,9078),SCB) "cast from unsigned long to pointer" [MISRA Note 9]
-^
-main.c(5): warning: In file included from...
-../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(31): warning: In file included from...
-../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
-../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(37): warning: '_Bool' is a C99 extension [-Wc99-extensions]
-typedef bool bool_t;
-        ^
-C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
-    #define bool _Bool
-                 ^
-main.c(5): warning: In file included from...
-../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(31): warning: In file included from...
-../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_c.h(48): warning: In file included from...
-../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source/rtx_core_cm.h(61): warning: // comments are not allowed in this language [-Wcomment]
-/// xPSR_Initialization Value
-^
-main.c(5): warning: In file included from...
-../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(35): warning: In file included from...
-C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS/6.0.0/CMSIS/RTOS2/Include\os_tick.h(35): warning: // comments are not allowed in this language [-Wcomment]
-/// IRQ Handler.
-^
-main.c(5): warning: In file included from...
-../../AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Source\rtx_lib.h(38): warning: In file included from...
-C:/Users/bl91/AppData/Local/Arm/Packs/ARM/CMSIS-RTX/5.9.0/Include\rtx_evr.h(29): warning: // comments are not allowed in this language [-Wcomment]
-#include "rtx_os.h"                     // RTX OS definitions
-                                        ^
-main.c(19): warning: this function declaration is not a prototype [-Wstrict-prototypes]
-void Led_createBlinkTask();
-                        ^
-                         void
-main.c(45): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-  GPIOA->MODER &= ~0x00000C00;    /* clear pin mode */
-               ~~ ^~~~~~~~~~~
-main.c(65): warning: no newline at end of file [-Wnewline-eof]
-}
- ^
-14 warnings generated.
-compiling main.c...
+Led.cpp(1): warning: In file included from...
+./Led.h(9): warning: padding size of 'Led' with 2 bytes to alignment boundary [-Wpadded]
+class Led {
+      ^
+Led.cpp(26): warning: function 'BlinkLed_Task' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void Led::BlinkLed_Task(uint32_t periodMs /*,this*/){
+                                                    ^
+Led.cpp(51): warning: missing field 'attr_bits' initializer [-Wmissing-field-initializers]
+    osThreadAttr_t attr = {0};
+                            ^
+3 warnings generated.
+compiling Led.cpp...
 linking...
-Program Size: Code=17396 RO-data=724 RW-data=168 ZI-data=36296  
-".\Objects\rtos_prj.axf" - 0 Error(s), 14 Warning(s).
+Program Size: Code=17320 RO-data=724 RW-data=168 ZI-data=36304  
+".\Objects\rtos_prj.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -177,32 +120,32 @@ Package Vendor: Keil
       Source file:   CMSIS/RTOS2/Source/os_systick.c
 
    * Component: ARM::CMSIS:RTOS2:Keil RTX5:Source:5.9.0
-      Include file:  Config/RTX_Config.h
-      Source file:   Template/Events.c
-      Source file:   Template/MemPool.c
-      Source file:   Template/MsgQueue.c
-      Source file:   Template/Mutex.c
-      Source file:   Template/Semaphore.c
-      Source file:   Template/Thread.c
-      Include file:  Include/rtx_os.h
       Source file:   Config/RTX_Config.c
-      Source file:   Template/main.c
-      Source file:   Source/rtx_mempool.c
-      Source file:   Source/rtx_timer.c
-      Source file:   Source/GCC/irq_armv7m.S
-      Source file:   Source/rtx_system.c
-      Source file:   Source/rtx_semaphore.c
-      Source file:   Source/rtx_mutex.c
-      Source file:   Source/rtx_evr.c
-      Source file:   Source/rtx_kernel.c
-      Source file:   Source/rtx_lib.c
-      Source file:   Source/rtx_thread.c
-      Source file:   Source/rtx_msgqueue.c
-      Source file:   Template/Timer.c
+      Include file:  Include/rtx_os.h
+      Include file:  Config/RTX_Config.h
       Source file:   Source/rtx_evflags.c
-      Source file:   Source/rtx_memory.c
+      Source file:   Source/rtx_kernel.c
+      Source file:   Template/main.c
+      Source file:   Source/rtx_system.c
       Source file:   Template/svc_user.c
       Source file:   Source/rtx_delay.c
+      Source file:   Source/rtx_timer.c
+      Source file:   Source/rtx_lib.c
+      Source file:   Template/Timer.c
+      Source file:   Source/rtx_mutex.c
+      Source file:   Source/rtx_semaphore.c
+      Source file:   Template/MsgQueue.c
+      Source file:   Source/GCC/irq_armv7m.S
+      Source file:   Source/rtx_thread.c
+      Source file:   Template/Thread.c
+      Source file:   Template/Semaphore.c
+      Source file:   Source/rtx_msgqueue.c
+      Source file:   Source/rtx_memory.c
+      Source file:   Source/rtx_evr.c
+      Source file:   Template/Events.c
+      Source file:   Template/MemPool.c
+      Source file:   Template/Mutex.c
+      Source file:   Source/rtx_mempool.c
 
    * Component: Keil.NUCLEO-F401RE::Board Support:Buttons:1.1.0
       Source file:   Boards/ST/NUCLEO-F401RE/Common/Buttons_NUCLEO_F401RE.c
@@ -212,14 +155,14 @@ Package Vendor: Keil
 
    * Component: Keil::Device:STM32Cube Framework:Classic:1.8.1
       Include file:  MDK/Templates/Inc/stm32f4xx_hal_conf.h
-      Include file:  CMSIS/Driver/Config/RTE_Device.h
-      Include file:  MDK/Templates/Inc/main.h
-      Include file:  MDK/Templates/Inc/stm32f4xx_it.h
-      Source file:   MDK/Templates_LL/Src/main.c
-      Include file:  MDK/Templates_LL/Inc/main.h
-      Source file:   MDK/Templates/Src/stm32f4xx_hal_msp.c
       Source file:   MDK/Templates/Src/main.c
+      Include file:  CMSIS/Driver/Config/RTE_Device.h
+      Source file:   MDK/Templates/Src/stm32f4xx_hal_msp.c
+      Source file:   MDK/Templates_LL/Src/main.c
       Source file:   MDK/Templates/Src/stm32f4xx_it.c
+      Include file:  MDK/Templates/Inc/main.h
+      Include file:  MDK/Templates_LL/Inc/main.h
+      Include file:  MDK/Templates/Inc/stm32f4xx_it.h
 
    * Component: Keil::Device:STM32Cube HAL:Common:1.8.1
       Include file:  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -232,8 +175,8 @@ Package Vendor: Keil
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
 
    * Component: Keil::Device:STM32Cube HAL:PWR:1.8.1
-      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:RCC:1.8.1
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
@@ -241,11 +184,11 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:2.6.3
       Source file:   MDK/Device/Source/ARM/STM32F401xx_OPT.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s
       Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
-      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>
