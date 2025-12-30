@@ -23,10 +23,14 @@ void Led::BlinkLed_Task_Wrap(void* arg){
 
 /*------------------ RTOS task to be executed-------------------------------------------------------------------------------------*/
 
-void Led::BlinkLed_Task(uint32_t periodMs /*,this*/){
+
+void Led::BlinkLed_Task(uint32_t periodMs/*,this*/){
+
   for (;;) {
-        /* this->*/BlinkLed_Toggle();
-        osDelay(periodMs);
+            osSemaphoreAcquire(semWait_, osWaitForever); // aspetta il turno
+            /* this->*/BlinkLed_Toggle();
+            osDelay(periodMs);
+            osSemaphoreRelease(semGive_);   //passa il turno a Task2 (intervento)
     }
   
   }
@@ -35,14 +39,14 @@ void Led::BlinkLed_Task(uint32_t periodMs /*,this*/){
 
 
 void Led::BlinkLed_Toggle(void/*, this*/) {
-   static bool Toggle_b = false;
-   if (!Toggle_b){
+   
+   if (!Toggle_b_){
       port_->ODR|= pin_;
-      Toggle_b=true;
+      Toggle_b_=true;
   }
   else{
      port_->ODR &= ~pin_;
-     Toggle_b=false;
+     Toggle_b_=false;
   }
 }
 
