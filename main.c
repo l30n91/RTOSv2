@@ -12,6 +12,7 @@ extern "C" {
 
  void Led_Init(void);
  void Led_createBlinkTask();
+ void Usart_Init(USART_TypeDef*, uint32_t);
 
 #ifdef __cplusplus
 }
@@ -29,6 +30,7 @@ int main (void)
   
   //kernel init
   osKernelInitialize();
+  Usart_Init(USART2, RCC_APB1ENR_USART2EN);
   Led_Init();
   Led_createBlinkTask();
   osKernelStart(); 

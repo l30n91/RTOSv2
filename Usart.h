@@ -9,7 +9,7 @@
 class Usart {
   public: Usart(USART_TypeDef* port):port_(port){} //parameters initialization :port_(port), pin_(pin){};
     void Usart_Write(uint8_t*);
-    void Usart_Init(uint8_t);
+    void Usart_Init(uint32_t);
     //static void  Usart2_Write_Task_Wrap(void*); //this method needs to be STATIC because it is needed for RTOS
     
   private:
