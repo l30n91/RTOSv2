@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\AppData\Local\Arm\Packs\ARM\CMSIS-RTX\5.9.0\Source;..\RTOS</IncludePath>
+              <IncludePath>..\..\AppData\Local\Arm\Packs\ARM\CMSIS-RTX\5.9.0\Source;..\RTOS;..\RTOS - Copia</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -413,6 +413,16 @@
               <FileName>WrapperLedCpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\WrapperLedCpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Usart.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Usart.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Usart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Usart.h</FilePath>
             </File>
           </Files>
         </Group>
