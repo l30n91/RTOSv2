@@ -17,8 +17,8 @@ void Led_Init(void) {
   
  
     if (!led_5 && !led_6) {
-        led_5 = new Led(GPIOA, GPIO_PIN_5,sem1, sem2); // crea l’oggetto inizializzando anche il costruttore della classe
-        led_6 = new Led(GPIOA, GPIO_PIN_6,sem2, sem1); // crea l’oggetto inizializzando anche il costruttore della classe
+        led_5 = new Led(GPIOA, GPIO_PIN_5,sem1, sem2, false); // crea l’oggetto inizializzando anche il costruttore della classe
+        led_6 = new Led(GPIOA, GPIO_PIN_6,sem2, sem1, true); // crea l’oggetto inizializzando anche il costruttore della classe
     }
 }
 

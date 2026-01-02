@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\rtos_prj.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\rtos_prj.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Wed Dec 31 18:40:54 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Fri Jan  2 16:07:54 2026
 <BR><P>
 <H3>Maximum Stack Usage =        232 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -584,8 +584,8 @@ Global Symbols
 <P><STRONG><a name="[82]"></a>malloc_internal$concurrent</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, h1_alloc_threads.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = malloc_internal$concurrent &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free_internal$concurrent &rArr; _mutex_acquire &rArr; osMutexAcquire &rArr; IsIrqMasked
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_release
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_acquire
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_release
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_acquire
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Heap1_SizeAdjust
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Full
 </UL>
@@ -604,8 +604,8 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>free_internal$concurrent</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, h1_free_threads.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = free_internal$concurrent &rArr; _mutex_acquire &rArr; osMutexAcquire &rArr; IsIrqMasked
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_release
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_acquire
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_release
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_acquire
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_ProvideMemory
@@ -676,7 +676,7 @@ Global Symbols
 <P><STRONG><a name="[8c]"></a>__Heap_Initialize</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, h1_init_threads.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = __Heap_Initialize &rArr; _mutex_initialize &rArr; osMutexNew &rArr; IsIrqMasked
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_initialize
+<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_initialize
 </UL>
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
 </UL>
@@ -777,7 +777,7 @@ Global Symbols
 <P><STRONG><a name="[91]"></a>__Heap_Finalize</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, h1_final_threads.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = __Heap_Finalize &rArr; _mutex_free &rArr; osMutexDelete &rArr; IsIrqMasked
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_free
+<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_free
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_terminate_alloc
 </UL>
@@ -1225,10 +1225,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxTimerThread
 </UL>
 
-<P><STRONG><a name="[95]"></a>Led_Init</STRONG> (Thumb, 218 bytes, Stack size 48 bytes, wrapperledcpp.o(.text.Led_Init))
+<P><STRONG><a name="[95]"></a>Led_Init</STRONG> (Thumb, 238 bytes, Stack size 48 bytes, wrapperledcpp.o(.text.Led_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 212<LI>Call Chain = Led_Init &rArr; operator new(unsigned int) &rArr; malloc &rArr; malloc_internal$concurrent &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free_internal$concurrent &rArr; _mutex_acquire &rArr; osMutexAcquire &rArr; IsIrqMasked
 </UL>
-<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led::Led__sub_object(GPIO_TypeDef*, unsigned short, void*, void*)
+<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led::Led__sub_object(GPIO_TypeDef*, unsigned short, void*, void*, bool)
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;operator new(unsigned int)
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreNew
 </UL>
@@ -1275,8 +1275,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[ac]"></a>Led::BlinkLed_Task(unsigned int)</STRONG> (Thumb, 80 bytes, Stack size 32 bytes, led.o(.text._ZN3Led13BlinkLed_TaskEj))
-<BR><BR>[Stack]<UL><LI>Max Depth = 172<LI>Call Chain = Led::BlinkLed_Task(unsigned int) &rArr; osSemaphoreRelease &rArr; isrRtxSemaphoreRelease &rArr; osRtxPostProcess &rArr; isr_queue_put &rArr; atomic_inc16_lt
+<P><STRONG><a name="[ac]"></a>Led::BlinkLed_Task(unsigned int)</STRONG> (Thumb, 98 bytes, Stack size 24 bytes, led.o(.text._ZN3Led13BlinkLed_TaskEj))
+<BR><BR>[Stack]<UL><LI>Max Depth = 164<LI>Call Chain = Led::BlinkLed_Task(unsigned int) &rArr; osSemaphoreRelease &rArr; isrRtxSemaphoreRelease &rArr; osRtxPostProcess &rArr; isr_queue_put &rArr; atomic_inc16_lt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreRelease
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
@@ -1287,14 +1287,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led::BlinkLed_Task_Wrap(void*)
 </UL>
 
-<P><STRONG><a name="[ae]"></a>Led::BlinkLed_Toggle()</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, led.o(.text._ZN3Led15BlinkLed_ToggleEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Led::BlinkLed_Toggle()
+<P><STRONG><a name="[ae]"></a>Led::BlinkLed_Toggle()</STRONG> (Thumb, 16 bytes, Stack size 4 bytes, led.o(.text._ZN3Led15BlinkLed_ToggleEv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Led::BlinkLed_Toggle()
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led::BlinkLed_Task(unsigned int)
 </UL>
 
 <P><STRONG><a name="[44]"></a>Led::BlinkLed_Task_Wrap(void*)</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, led.o(.text._ZN3Led18BlinkLed_Task_WrapEPv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 188<LI>Call Chain = Led::BlinkLed_Task_Wrap(void*) &rArr; Led::BlinkLed_Task(unsigned int) &rArr; osSemaphoreRelease &rArr; isrRtxSemaphoreRelease &rArr; osRtxPostProcess &rArr; isr_queue_put &rArr; atomic_inc16_lt
+<BR><BR>[Stack]<UL><LI>Max Depth = 180<LI>Call Chain = Led::BlinkLed_Task_Wrap(void*) &rArr; Led::BlinkLed_Task(unsigned int) &rArr; osSemaphoreRelease &rArr; isrRtxSemaphoreRelease &rArr; osRtxPostProcess &rArr; isr_queue_put &rArr; atomic_inc16_lt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led::BlinkLed_Task(unsigned int)
 </UL>
@@ -1310,8 +1310,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_createBlinkTask
 </UL>
 
-<P><STRONG><a name="[98]"></a>Led::Led__sub_object(GPIO_TypeDef*, unsigned short, void*, void*)</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, wrapperledcpp.o(.text._ZN3LedC2EP12GPIO_TypeDeftPvS2_))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Led::Led__sub_object(GPIO_TypeDef*, unsigned short, void*, void*)
+<P><STRONG><a name="[98]"></a>Led::Led__sub_object(GPIO_TypeDef*, unsigned short, void*, void*, bool)</STRONG> (Thumb, 66 bytes, Stack size 28 bytes, wrapperledcpp.o(.text._ZN3LedC2EP12GPIO_TypeDeftPvS2_b))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = Led::Led__sub_object(GPIO_TypeDef*, unsigned short, void*, void*, bool)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Init
 </UL>
@@ -1348,7 +1348,7 @@ Global Symbols
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Usart_Init
 </UL>
 
-<P><STRONG><a name="[5e]"></a>_mutex_acquire</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, rtx_lib.o(.text._mutex_acquire))
+<P><STRONG><a name="[5d]"></a>_mutex_acquire</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, rtx_lib.o(.text._mutex_acquire))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = _mutex_acquire &rArr; osMutexAcquire &rArr; IsIrqMasked
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexAcquire
@@ -1358,7 +1358,7 @@ Global Symbols
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc_internal$concurrent
 </UL>
 
-<P><STRONG><a name="[5c]"></a>_mutex_free</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, rtx_lib.o(.text._mutex_free))
+<P><STRONG><a name="[5f]"></a>_mutex_free</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, rtx_lib.o(.text._mutex_free))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = _mutex_free &rArr; osMutexDelete &rArr; IsIrqMasked
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexDelete
@@ -1366,7 +1366,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Finalize
 </UL>
 
-<P><STRONG><a name="[5d]"></a>_mutex_initialize</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, rtx_lib.o(.text._mutex_initialize))
+<P><STRONG><a name="[5c]"></a>_mutex_initialize</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, rtx_lib.o(.text._mutex_initialize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = _mutex_initialize &rArr; osMutexNew &rArr; IsIrqMasked
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexNew
@@ -1375,7 +1375,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Initialize
 </UL>
 
-<P><STRONG><a name="[5f]"></a>_mutex_release</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, rtx_lib.o(.text._mutex_release))
+<P><STRONG><a name="[5e]"></a>_mutex_release</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, rtx_lib.o(.text._mutex_release))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = _mutex_release &rArr; os_kernel_is_active &rArr; osKernelGetState &rArr; svcRtxKernelGetState &rArr; EvrRtxKernelGetState
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
@@ -1482,7 +1482,7 @@ Global Symbols
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMutexAcquire
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMutexError
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_acquire
+<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_acquire
 </UL>
 
 <P><STRONG><a name="[b7]"></a>osMutexDelete</STRONG> (Thumb, 86 bytes, Stack size 32 bytes, rtx_mutex.o(.text.osMutexDelete))
@@ -1493,7 +1493,7 @@ Global Symbols
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMutexDelete
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMutexError
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_free
+<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_free
 </UL>
 
 <P><STRONG><a name="[b8]"></a>osMutexNew</STRONG> (Thumb, 86 bytes, Stack size 32 bytes, rtx_mutex.o(.text.osMutexNew))
@@ -1504,7 +1504,7 @@ Global Symbols
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMutexNew
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMutexError
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_initialize
+<BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_initialize
 </UL>
 
 <P><STRONG><a name="[b9]"></a>osMutexRelease</STRONG> (Thumb, 86 bytes, Stack size 32 bytes, rtx_mutex.o(.text.osMutexRelease))
@@ -1515,7 +1515,7 @@ Global Symbols
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMutexRelease
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMutexError
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_release
+<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_release
 </UL>
 
 <P><STRONG><a name="[f2]"></a>osRtxErrorNotify</STRONG> (Thumb, 48 bytes, Stack size 12 bytes, rtx_config.o(.text.osRtxErrorNotify))
@@ -1539,7 +1539,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxErrorNotify
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxKernelErrorNotify
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_initialize
+<BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_initialize
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxPostProcess
 <LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SVC_Handler
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxTimerTick
@@ -2090,8 +2090,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelGetState
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_release
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_acquire
+<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_release
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_mutex_acquire
 </UL>
 
 <P><STRONG><a name="[11c]"></a>user_perthread_libspace_free</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, rtx_lib.o(.text.user_perthread_libspace_free))

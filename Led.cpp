@@ -28,12 +28,16 @@ void Led::BlinkLed_Task_Wrap(void* arg){
 void Led::BlinkLed_Task(uint32_t periodMs/*,this*/){
   
   for (;;) {
+            const char* string1;
             osSemaphoreAcquire(semWait_, osWaitForever); // aspetta il turno
             /* this->*/BlinkLed_Toggle();
-            char string[] ="ciao";
-            usart2->Usart_Write((uint8_t*)string);
+            if(!led_)
+            {string1="led 5 ON led 6 OFF\n";}  /* string1="ciao" equivale a string1= &string[0]*/
+            else 
+            {string1 ="led 6 ON led 5 OFF\n";}
+            usart2->Usart_Write((uint8_t*)string1);
             osDelay(periodMs);
-            osSemaphoreRelease(semGive_);  //passa il turno a Task2 (intervento)
+            osSemaphoreRelease(semGive_);  //passa il turno all'altro task
     }
   
   }
@@ -43,14 +47,14 @@ void Led::BlinkLed_Task(uint32_t periodMs/*,this*/){
 
 void Led::BlinkLed_Toggle(void/*, this*/) {
    
-   if (!Toggle_b_){
-      port_->ODR|= pin_;
-      Toggle_b_=true;
-  }
-  else{
-     port_->ODR &= ~pin_;
-     Toggle_b_=false;
-  }
+ //if (!Toggle_b_){
+      port_->ODR = pin_; //metti led pin = 1 e  tutti gli altri a 0
+     //Toggle_b_=true;
+ // }
+ // else{
+     //port_->ODR &= ~pin_;
+    //Toggle_b_=false;
+  //}
 }
 
 

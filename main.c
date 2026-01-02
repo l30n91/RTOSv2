@@ -20,14 +20,12 @@ extern "C" {
 
 int main (void)
 {
-  
   RCC->AHB1ENR |=  1;             /* enable GPIOA clock */
   GPIOA->MODER &= ~0x00000C00;    /* clear pin mode */
   GPIOA->MODER |=  0x00000400;    /* set pin to output mode */
   GPIOA->MODER |=  (1U << (6 * 2));  // set PA6 come output
   GPIOA->MODER |=  (1U << (7 * 2));  // set PA7 come output
   GPIOA->MODER |=  (1U << (5 * 2));  // set PA5 come output
-  
   //kernel init
   osKernelInitialize();
   Usart_Init(USART2, RCC_APB1ENR_USART2EN);

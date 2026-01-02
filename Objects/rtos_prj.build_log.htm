@@ -21,51 +21,47 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
-C:\Users\bl91\Desktop\RTOS - Copia\rtos_prj.uvprojx
+C:\Users\bl91\Desktop\RTOS_v2\rtos_prj.uvprojx
 Project File Date:  12/30/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-Usart.cpp(1): warning: In file included from...
-../RTOS - Copia/Usart.h(25): warning: no newline at end of file [-Wnewline-eof]
+Led.cpp(1): warning: In file included from...
+./Led.h(23): warning: default member initializer for non-static data member is a C++11 extension [-Wc++11-extensions]
+     bool led_ = false;
+               ^
+./Led.h(24): warning: default member initializer for non-static data member is a C++11 extension [-Wc++11-extensions]
+     bool Toggle_b_ = false;
+                    ^
+Led.cpp(2): warning: In file included from...
+./Usart.h(25): warning: no newline at end of file [-Wnewline-eof]
 #endif // USART_HPP
                    ^
-Usart.cpp(21): warning: use of old-style cast [-Wold-style-cast]
-    RCC-> APB1ENR |= rcc_usart_en/*rcc_usart_en = RCC_APB1ENR_USART2EN;*/;
-    ^~~
-C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h(786): note: expanded from macro 'RCC'
-#define RCC                 ((RCC_TypeDef *) RCC_BASE)
-                             ^               ~~~~~~~~
-Usart.cpp(23): warning: use of old-style cast [-Wold-style-cast]
-    GPIOA->MODER &= ~((3U<<(2*2)) | (3U<<(2*3)));   // clear PA2, PA3
-    ^~~~~
-C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h(779): note: expanded from macro 'GPIOA'
-#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
-                             ^                ~~~~~~~~~~
-Usart.cpp(24): warning: use of old-style cast [-Wold-style-cast]
-    GPIOA->MODER |=  ((2U<<(2*2)) | (2U<<(2*3)));   // Alternate Function
-    ^~~~~
-C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h(779): note: expanded from macro 'GPIOA'
-#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
-                             ^                ~~~~~~~~~~
-Usart.cpp(25): warning: use of old-style cast [-Wold-style-cast]
-    GPIOA->AFR[0] &= ~((0xFU<<(4*2)) | (0xFU<<(4*3)));
-    ^~~~~
-C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h(779): note: expanded from macro 'GPIOA'
-#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
-                             ^                ~~~~~~~~~~
-Usart.cpp(26): warning: use of old-style cast [-Wold-style-cast]
-    GPIOA->AFR[0] |=  ((7U  <<(4*2)) | (7U  <<(4*3))); // AF7
-    ^~~~~
-C:/Users/bl91/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h(779): note: expanded from macro 'GPIOA'
-#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
-                             ^                ~~~~~~~~~~
-6 warnings generated.
-compiling Usart.cpp...
+Led.cpp(1): warning: In file included from...
+./Led.h(21): warning: padding class 'Led' with 2 bytes to align 'semWait_' [-Wpadded]
+     osSemaphoreId_t semWait_; 
+                     ^
+./Led.h(9): warning: padding size of 'Led' with 2 bytes to alignment boundary [-Wpadded]
+class Led {
+      ^
+Led.cpp(38): warning: use of old-style cast [-Wold-style-cast]
+            usart2->Usart_Write((uint8_t*)string1);
+                                ^         ~~~~~~~
+Led.cpp(38): warning: cast from 'const char *' to 'unsigned char *' drops const qualifier [-Wcast-qual]
+            usart2->Usart_Write((uint8_t*)string1);
+                                          ^
+Led.cpp(28): warning: function 'BlinkLed_Task' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void Led::BlinkLed_Task(uint32_t periodMs/*,this*/){
+                                                   ^
+Led.cpp(62): warning: missing field 'attr_bits' initializer [-Wmissing-field-initializers]
+    osThreadAttr_t attr = {0};
+                            ^
+9 warnings generated.
+compiling Led.cpp...
 linking...
-Program Size: Code=19544 RO-data=724 RW-data=168 ZI-data=36312  
-".\Objects\rtos_prj.axf" - 0 Error(s), 6 Warning(s).
+Program Size: Code=19568 RO-data=764 RW-data=168 ZI-data=36312  
+".\Objects\rtos_prj.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -147,29 +143,29 @@ Package Vendor: Keil
       Include file:  Include/rtx_os.h
       Include file:  Config/RTX_Config.h
       Source file:   Config/RTX_Config.c
-      Source file:   Source/rtx_system.c
-      Source file:   Source/rtx_kernel.c
-      Source file:   Template/Mutex.c
-      Source file:   Template/Semaphore.c
-      Source file:   Template/MsgQueue.c
-      Source file:   Source/rtx_lib.c
-      Source file:   Source/rtx_evr.c
-      Source file:   Source/rtx_semaphore.c
-      Source file:   Source/rtx_memory.c
-      Source file:   Template/main.c
-      Source file:   Template/svc_user.c
-      Source file:   Source/rtx_timer.c
-      Source file:   Source/rtx_msgqueue.c
-      Source file:   Source/rtx_mutex.c
-      Source file:   Source/GCC/irq_armv7m.S
-      Source file:   Template/Timer.c
-      Source file:   Template/Thread.c
       Source file:   Template/Events.c
-      Source file:   Source/rtx_evflags.c
       Source file:   Source/rtx_delay.c
       Source file:   Source/rtx_thread.c
-      Source file:   Template/MemPool.c
+      Source file:   Source/rtx_semaphore.c
+      Source file:   Source/rtx_evr.c
       Source file:   Source/rtx_mempool.c
+      Source file:   Source/rtx_memory.c
+      Source file:   Source/rtx_mutex.c
+      Source file:   Template/Timer.c
+      Source file:   Template/MsgQueue.c
+      Source file:   Template/svc_user.c
+      Source file:   Source/rtx_kernel.c
+      Source file:   Source/rtx_system.c
+      Source file:   Template/Semaphore.c
+      Source file:   Template/main.c
+      Source file:   Source/rtx_lib.c
+      Source file:   Source/rtx_timer.c
+      Source file:   Source/rtx_evflags.c
+      Source file:   Template/MemPool.c
+      Source file:   Template/Mutex.c
+      Source file:   Source/rtx_msgqueue.c
+      Source file:   Source/GCC/irq_armv7m.S
+      Source file:   Template/Thread.c
 
    * Component: Keil.NUCLEO-F401RE::Board Support:Buttons:1.1.0
       Source file:   Boards/ST/NUCLEO-F401RE/Common/Buttons_NUCLEO_F401RE.c
@@ -178,15 +174,15 @@ Package Vendor: Keil
       Source file:   Boards/ST/NUCLEO-F401RE/Common/LED_NUCLEO_F401RE.c
 
    * Component: Keil::Device:STM32Cube Framework:Classic:1.8.1
-      Source file:   MDK/Templates/Src/stm32f4xx_hal_msp.c
-      Source file:   MDK/Templates/Src/stm32f4xx_it.c
-      Include file:  CMSIS/Driver/Config/RTE_Device.h
-      Include file:  MDK/Templates_LL/Inc/main.h
-      Include file:  MDK/Templates/Inc/main.h
       Source file:   MDK/Templates/Src/main.c
-      Source file:   MDK/Templates_LL/Src/main.c
-      Include file:  MDK/Templates/Inc/stm32f4xx_hal_conf.h
+      Source file:   MDK/Templates/Src/stm32f4xx_hal_msp.c
+      Include file:  MDK/Templates/Inc/main.h
       Include file:  MDK/Templates/Inc/stm32f4xx_it.h
+      Source file:   MDK/Templates_LL/Src/main.c
+      Include file:  MDK/Templates_LL/Inc/main.h
+      Include file:  CMSIS/Driver/Config/RTE_Device.h
+      Source file:   MDK/Templates/Src/stm32f4xx_it.c
+      Include file:  MDK/Templates/Inc/stm32f4xx_hal_conf.h
 
    * Component: Keil::Device:STM32Cube HAL:Common:1.8.1
       Include file:  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -203,13 +199,13 @@ Package Vendor: Keil
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:RCC:1.8.1
-      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
       Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
 
    * Component: Keil::Device:Startup:2.6.3
-      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
-      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
       Source file:   MDK/Device/Source/ARM/STM32F401xx_OPT.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
 Build Time Elapsed:  00:00:01
